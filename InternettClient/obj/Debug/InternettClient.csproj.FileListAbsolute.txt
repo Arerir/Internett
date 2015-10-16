@@ -19,3 +19,10 @@ E:\Users\Eli\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.cs
 E:\Users\Eli\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.LoginForm.resources
 E:\Users\Eli\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.Properties.Resources.resources
 E:\Users\Eli\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.csproj.GenerateResource.Cache
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\InternettClient.exe
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\InternettClient.pdb
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.csprojResolveAssemblyReference.cache
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.LoginForm.resources
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.Properties.Resources.resources
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.csproj.GenerateResource.Cache
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.MainForm.resources

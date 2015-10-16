@@ -15,6 +15,24 @@ namespace InternettClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://main", ConfigurationName="ServiceReference1.ServicePortType")]
     public interface ServicePortType {
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ByteCounter", ReplyAction="urn:ByteCounterResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        int ByteCounter();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ByteCounter", ReplyAction="urn:ByteCounterResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<int> ByteCounterAsync();
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReturnQRPicture", ReplyAction="urn:ReturnQRPictureResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InternettClient.ServiceReference1.ReturnQRPictureResponse ReturnQRPicture(InternettClient.ServiceReference1.ReturnQRPictureRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReturnQRPicture", ReplyAction="urn:ReturnQRPictureResponse")]
+        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnQRPictureResponse> ReturnQRPictureAsync(InternettClient.ServiceReference1.ReturnQRPictureRequest request);
+        
         // CODEGEN: Parameter 'Username' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:Authenticate", ReplyAction="urn:AuthenticateResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -23,15 +41,42 @@ namespace InternettClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Authenticate", ReplyAction="urn:AuthenticateResponse")]
         System.Threading.Tasks.Task<InternettClient.ServiceReference1.AuthenticateResponse> AuthenticateAsync(InternettClient.ServiceReference1.AuthenticateRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnQRPicture", WrapperNamespace="http://main", IsWrapped=true)]
+    public partial class ReturnQRPictureRequest {
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ReturnString", ReplyAction="urn:ReturnStringResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InternettClient.ServiceReference1.ReturnStringResponse ReturnString(InternettClient.ServiceReference1.ReturnStringRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Username;
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:ReturnString", ReplyAction="urn:ReturnStringResponse")]
-        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnStringResponse> ReturnStringAsync(InternettClient.ServiceReference1.ReturnStringRequest request);
+        public ReturnQRPictureRequest() {
+        }
+        
+        public ReturnQRPictureRequest(string Username) {
+            this.Username = Username;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnQRPictureResponse", WrapperNamespace="http://main", IsWrapped=true)]
+    public partial class ReturnQRPictureResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return")]
+        public sbyte[] @return;
+        
+        public ReturnQRPictureResponse() {
+        }
+        
+        public ReturnQRPictureResponse(sbyte[] @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -74,34 +119,6 @@ namespace InternettClient.ServiceReference1 {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnString", WrapperNamespace="http://main", IsWrapped=true)]
-    public partial class ReturnStringRequest {
-        
-        public ReturnStringRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ReturnStringResponse", WrapperNamespace="http://main", IsWrapped=true)]
-    public partial class ReturnStringResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string @return;
-        
-        public ReturnStringResponse() {
-        }
-        
-        public ReturnStringResponse(string @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicePortTypeChannel : InternettClient.ServiceReference1.ServicePortType, System.ServiceModel.IClientChannel {
     }
@@ -129,6 +146,37 @@ namespace InternettClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public int ByteCounter() {
+            return base.Channel.ByteCounter();
+        }
+        
+        public System.Threading.Tasks.Task<int> ByteCounterAsync() {
+            return base.Channel.ByteCounterAsync();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InternettClient.ServiceReference1.ReturnQRPictureResponse InternettClient.ServiceReference1.ServicePortType.ReturnQRPicture(InternettClient.ServiceReference1.ReturnQRPictureRequest request) {
+            return base.Channel.ReturnQRPicture(request);
+        }
+        
+        public sbyte[] ReturnQRPicture(string Username) {
+            InternettClient.ServiceReference1.ReturnQRPictureRequest inValue = new InternettClient.ServiceReference1.ReturnQRPictureRequest();
+            inValue.Username = Username;
+            InternettClient.ServiceReference1.ReturnQRPictureResponse retVal = ((InternettClient.ServiceReference1.ServicePortType)(this)).ReturnQRPicture(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnQRPictureResponse> InternettClient.ServiceReference1.ServicePortType.ReturnQRPictureAsync(InternettClient.ServiceReference1.ReturnQRPictureRequest request) {
+            return base.Channel.ReturnQRPictureAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnQRPictureResponse> ReturnQRPictureAsync(string Username) {
+            InternettClient.ServiceReference1.ReturnQRPictureRequest inValue = new InternettClient.ServiceReference1.ReturnQRPictureRequest();
+            inValue.Username = Username;
+            return ((InternettClient.ServiceReference1.ServicePortType)(this)).ReturnQRPictureAsync(inValue);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InternettClient.ServiceReference1.AuthenticateResponse InternettClient.ServiceReference1.ServicePortType.Authenticate(InternettClient.ServiceReference1.AuthenticateRequest request) {
             return base.Channel.Authenticate(request);
@@ -152,27 +200,6 @@ namespace InternettClient.ServiceReference1 {
             inValue.Username = Username;
             inValue.Password = Password;
             return ((InternettClient.ServiceReference1.ServicePortType)(this)).AuthenticateAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InternettClient.ServiceReference1.ReturnStringResponse InternettClient.ServiceReference1.ServicePortType.ReturnString(InternettClient.ServiceReference1.ReturnStringRequest request) {
-            return base.Channel.ReturnString(request);
-        }
-        
-        public string ReturnString() {
-            InternettClient.ServiceReference1.ReturnStringRequest inValue = new InternettClient.ServiceReference1.ReturnStringRequest();
-            InternettClient.ServiceReference1.ReturnStringResponse retVal = ((InternettClient.ServiceReference1.ServicePortType)(this)).ReturnString(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnStringResponse> InternettClient.ServiceReference1.ServicePortType.ReturnStringAsync(InternettClient.ServiceReference1.ReturnStringRequest request) {
-            return base.Channel.ReturnStringAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InternettClient.ServiceReference1.ReturnStringResponse> ReturnStringAsync() {
-            InternettClient.ServiceReference1.ReturnStringRequest inValue = new InternettClient.ServiceReference1.ReturnStringRequest();
-            return ((InternettClient.ServiceReference1.ServicePortType)(this)).ReturnStringAsync(inValue);
         }
     }
 }

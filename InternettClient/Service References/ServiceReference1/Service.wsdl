@@ -5,18 +5,6 @@
 	</wsdl:documentation>
   <wsdl:types>
     <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://main">
-      <xs:element name="ReturnString">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ReturnStringResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="Authenticate">
         <xs:complexType>
           <xs:sequence>
@@ -32,34 +20,70 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="ReturnQRPicture">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReturnQRPictureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="return" type="xs:byte" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ByteCounter">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ByteCounterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
   </wsdl:types>
+  <wsdl:message name="ByteCounterRequest">
+    <wsdl:part name="parameters" element="ns:ByteCounter" />
+  </wsdl:message>
+  <wsdl:message name="ByteCounterResponse">
+    <wsdl:part name="parameters" element="ns:ByteCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnQRPictureRequest">
+    <wsdl:part name="parameters" element="ns:ReturnQRPicture" />
+  </wsdl:message>
+  <wsdl:message name="ReturnQRPictureResponse">
+    <wsdl:part name="parameters" element="ns:ReturnQRPictureResponse" />
+  </wsdl:message>
   <wsdl:message name="AuthenticateRequest">
     <wsdl:part name="parameters" element="ns:Authenticate" />
   </wsdl:message>
   <wsdl:message name="AuthenticateResponse">
     <wsdl:part name="parameters" element="ns:AuthenticateResponse" />
   </wsdl:message>
-  <wsdl:message name="ReturnStringRequest">
-    <wsdl:part name="parameters" element="ns:ReturnString" />
-  </wsdl:message>
-  <wsdl:message name="ReturnStringResponse">
-    <wsdl:part name="parameters" element="ns:ReturnStringResponse" />
-  </wsdl:message>
   <wsdl:portType name="ServicePortType">
+    <wsdl:operation name="ByteCounter">
+      <wsdl:input wsaw:Action="urn:ByteCounter" message="ns:ByteCounterRequest" />
+      <wsdl:output wsaw:Action="urn:ByteCounterResponse" message="ns:ByteCounterResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnQRPicture">
+      <wsdl:input wsaw:Action="urn:ReturnQRPicture" message="ns:ReturnQRPictureRequest" />
+      <wsdl:output wsaw:Action="urn:ReturnQRPictureResponse" message="ns:ReturnQRPictureResponse" />
+    </wsdl:operation>
     <wsdl:operation name="Authenticate">
       <wsdl:input wsaw:Action="urn:Authenticate" message="ns:AuthenticateRequest" />
       <wsdl:output wsaw:Action="urn:AuthenticateResponse" message="ns:AuthenticateResponse" />
     </wsdl:operation>
-    <wsdl:operation name="ReturnString">
-      <wsdl:input wsaw:Action="urn:ReturnString" message="ns:ReturnStringRequest" />
-      <wsdl:output wsaw:Action="urn:ReturnStringResponse" message="ns:ReturnStringResponse" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap11Binding" type="ns:ServicePortType">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Authenticate">
-      <soap:operation soapAction="urn:Authenticate" style="document" />
+    <wsdl:operation name="ByteCounter">
+      <soap:operation soapAction="urn:ByteCounter" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -67,8 +91,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ReturnString">
-      <soap:operation soapAction="urn:ReturnString" style="document" />
+    <wsdl:operation name="ReturnQRPicture">
+      <soap:operation soapAction="urn:ReturnQRPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="urn:Authenticate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -79,8 +112,8 @@
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12Binding" type="ns:ServicePortType">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Authenticate">
-      <soap12:operation soapAction="urn:Authenticate" style="document" />
+    <wsdl:operation name="ByteCounter">
+      <soap12:operation soapAction="urn:ByteCounter" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -88,8 +121,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ReturnString">
-      <soap12:operation soapAction="urn:ReturnString" style="document" />
+    <wsdl:operation name="ReturnQRPicture">
+      <soap12:operation soapAction="urn:ReturnQRPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="urn:Authenticate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -100,8 +142,8 @@
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpBinding" type="ns:ServicePortType">
     <http:binding verb="POST" />
-    <wsdl:operation name="Authenticate">
-      <http:operation location="Authenticate" />
+    <wsdl:operation name="ByteCounter">
+      <http:operation location="ByteCounter" />
       <wsdl:input>
         <mime:content part="parameters" type="application/xml" />
       </wsdl:input>
@@ -109,8 +151,17 @@
         <mime:content part="parameters" type="application/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ReturnString">
-      <http:operation location="ReturnString" />
+    <wsdl:operation name="ReturnQRPicture">
+      <http:operation location="ReturnQRPicture" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <http:operation location="Authenticate" />
       <wsdl:input>
         <mime:content part="parameters" type="application/xml" />
       </wsdl:input>
