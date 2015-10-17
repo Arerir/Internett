@@ -31,7 +31,7 @@ namespace InternettClient
             if (loginComplete())
             {
                 responseTxt.Text = "Login Complete!";
-                MainForm mainForm = new MainForm(client);
+                MainForm mainForm = new MainForm(client, UserName.Text);
                 mainForm.Show();
 
             }

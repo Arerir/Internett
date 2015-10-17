@@ -20,6 +20,20 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="ByteCounter">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="jsonOfFile" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ByteCounterResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="ReturnQRPicture">
         <xs:complexType>
           <xs:sequence>
@@ -31,18 +45,6 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element maxOccurs="unbounded" name="return" type="xs:byte" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ByteCounter">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="ByteCounterResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="return" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>

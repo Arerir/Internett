@@ -26,3 +26,5 @@ E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.Properties.Resources.resources
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.csproj.GenerateResource.Cache
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.MainForm.resources
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\Newtonsoft.Json.dll
+E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\Newtonsoft.Json.xml

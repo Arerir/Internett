@@ -15,14 +15,14 @@ namespace InternettClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://main", ConfigurationName="ServiceReference1.ServicePortType")]
     public interface ServicePortType {
         
+        // CODEGEN: Parameter 'jsonOfFile' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:ByteCounter", ReplyAction="urn:ByteCounterResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        int ByteCounter();
+        InternettClient.ServiceReference1.ByteCounterResponse ByteCounter(InternettClient.ServiceReference1.ByteCounterRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:ByteCounter", ReplyAction="urn:ByteCounterResponse")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        System.Threading.Tasks.Task<int> ByteCounterAsync();
+        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ByteCounterResponse> ByteCounterAsync(InternettClient.ServiceReference1.ByteCounterRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:ReturnQRPicture", ReplyAction="urn:ReturnQRPictureResponse")]
@@ -41,6 +41,41 @@ namespace InternettClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Authenticate", ReplyAction="urn:AuthenticateResponse")]
         System.Threading.Tasks.Task<InternettClient.ServiceReference1.AuthenticateResponse> AuthenticateAsync(InternettClient.ServiceReference1.AuthenticateRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ByteCounter", WrapperNamespace="http://main", IsWrapped=true)]
+    public partial class ByteCounterRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string jsonOfFile;
+        
+        public ByteCounterRequest() {
+        }
+        
+        public ByteCounterRequest(string jsonOfFile) {
+            this.jsonOfFile = jsonOfFile;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ByteCounterResponse", WrapperNamespace="http://main", IsWrapped=true)]
+    public partial class ByteCounterResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
+        public int @return;
+        
+        public ByteCounterResponse() {
+        }
+        
+        public ByteCounterResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -146,12 +181,27 @@ namespace InternettClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public int ByteCounter() {
-            return base.Channel.ByteCounter();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InternettClient.ServiceReference1.ByteCounterResponse InternettClient.ServiceReference1.ServicePortType.ByteCounter(InternettClient.ServiceReference1.ByteCounterRequest request) {
+            return base.Channel.ByteCounter(request);
         }
         
-        public System.Threading.Tasks.Task<int> ByteCounterAsync() {
-            return base.Channel.ByteCounterAsync();
+        public int ByteCounter(string jsonOfFile) {
+            InternettClient.ServiceReference1.ByteCounterRequest inValue = new InternettClient.ServiceReference1.ByteCounterRequest();
+            inValue.jsonOfFile = jsonOfFile;
+            InternettClient.ServiceReference1.ByteCounterResponse retVal = ((InternettClient.ServiceReference1.ServicePortType)(this)).ByteCounter(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InternettClient.ServiceReference1.ByteCounterResponse> InternettClient.ServiceReference1.ServicePortType.ByteCounterAsync(InternettClient.ServiceReference1.ByteCounterRequest request) {
+            return base.Channel.ByteCounterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InternettClient.ServiceReference1.ByteCounterResponse> ByteCounterAsync(string jsonOfFile) {
+            InternettClient.ServiceReference1.ByteCounterRequest inValue = new InternettClient.ServiceReference1.ByteCounterRequest();
+            inValue.jsonOfFile = jsonOfFile;
+            return ((InternettClient.ServiceReference1.ServicePortType)(this)).ByteCounterAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
