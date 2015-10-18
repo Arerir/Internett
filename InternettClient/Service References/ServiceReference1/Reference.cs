@@ -15,7 +15,7 @@ namespace InternettClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://main", ConfigurationName="ServiceReference1.ServicePortType")]
     public interface ServicePortType {
         
-        // CODEGEN: Parameter 'jsonOfFile' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        // CODEGEN: Parameter 'base64String' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:ByteCounter", ReplyAction="urn:ByteCounterResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -51,13 +51,13 @@ namespace InternettClient.ServiceReference1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string jsonOfFile;
+        public string base64String;
         
         public ByteCounterRequest() {
         }
         
-        public ByteCounterRequest(string jsonOfFile) {
-            this.jsonOfFile = jsonOfFile;
+        public ByteCounterRequest(string base64String) {
+            this.base64String = base64String;
         }
     }
     
@@ -186,9 +186,9 @@ namespace InternettClient.ServiceReference1 {
             return base.Channel.ByteCounter(request);
         }
         
-        public int ByteCounter(string jsonOfFile) {
+        public int ByteCounter(string base64String) {
             InternettClient.ServiceReference1.ByteCounterRequest inValue = new InternettClient.ServiceReference1.ByteCounterRequest();
-            inValue.jsonOfFile = jsonOfFile;
+            inValue.base64String = base64String;
             InternettClient.ServiceReference1.ByteCounterResponse retVal = ((InternettClient.ServiceReference1.ServicePortType)(this)).ByteCounter(inValue);
             return retVal.@return;
         }
@@ -198,9 +198,9 @@ namespace InternettClient.ServiceReference1 {
             return base.Channel.ByteCounterAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InternettClient.ServiceReference1.ByteCounterResponse> ByteCounterAsync(string jsonOfFile) {
+        public System.Threading.Tasks.Task<InternettClient.ServiceReference1.ByteCounterResponse> ByteCounterAsync(string base64String) {
             InternettClient.ServiceReference1.ByteCounterRequest inValue = new InternettClient.ServiceReference1.ByteCounterRequest();
-            inValue.jsonOfFile = jsonOfFile;
+            inValue.base64String = base64String;
             return ((InternettClient.ServiceReference1.ServicePortType)(this)).ByteCounterAsync(inValue);
         }
         

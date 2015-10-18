@@ -54,11 +54,13 @@
             // 
             // byteTB
             // 
+            this.byteTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.byteTB.Location = new System.Drawing.Point(236, 218);
             this.byteTB.Name = "byteTB";
             this.byteTB.ReadOnly = true;
-            this.byteTB.Size = new System.Drawing.Size(62, 20);
+            this.byteTB.Size = new System.Drawing.Size(62, 13);
             this.byteTB.TabIndex = 1;
+            this.byteTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.byteTB.Visible = false;
             // 
             // qrPicture

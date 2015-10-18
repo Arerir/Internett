@@ -23,7 +23,7 @@
       <xs:element name="ByteCounter">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="jsonOfFile" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="base64String" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
