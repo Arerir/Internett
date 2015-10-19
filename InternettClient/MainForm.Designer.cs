@@ -40,6 +40,7 @@
             this.byteCountBTN = new System.Windows.Forms.Button();
             this.inputTB = new System.Windows.Forms.TextBox();
             this.inputLabel = new System.Windows.Forms.Label();
+            this.numberLabel = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.qrPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.qrPicture.Location = new System.Drawing.Point(53, 41);
             this.qrPicture.Name = "qrPicture";
-            this.qrPicture.Size = new System.Drawing.Size(105, 66);
+            this.qrPicture.Size = new System.Drawing.Size(100, 100);
             this.qrPicture.TabIndex = 2;
             this.qrPicture.TabStop = false;
             this.qrPicture.Visible = false;
@@ -156,11 +157,23 @@
             this.inputLabel.TabIndex = 11;
             this.inputLabel.Text = "Input";
             // 
+            // numberLabel
+            // 
+            this.numberLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numberLabel.Location = new System.Drawing.Point(168, 128);
+            this.numberLabel.Name = "numberLabel";
+            this.numberLabel.ReadOnly = true;
+            this.numberLabel.Size = new System.Drawing.Size(62, 13);
+            this.numberLabel.TabIndex = 12;
+            this.numberLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numberLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 307);
+            this.Controls.Add(this.numberLabel);
             this.Controls.Add(this.inputLabel);
             this.Controls.Add(this.inputTB);
             this.Controls.Add(this.byteCountBTN);
@@ -194,5 +207,6 @@
         private System.Windows.Forms.Button byteCountBTN;
         private System.Windows.Forms.TextBox inputTB;
         private System.Windows.Forms.Label inputLabel;
+        private System.Windows.Forms.TextBox numberLabel;
     }
 }
