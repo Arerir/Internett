@@ -22,7 +22,6 @@ namespace InternettClient
         public LoginForm()
         {
             InitializeComponent();
-            
         }
 
         private void LoginBTN_Click(object sender, EventArgs e)
@@ -47,12 +46,17 @@ namespace InternettClient
             BasicHttpBinding basicBinding = new BasicHttpBinding();
             basicBinding.SendTimeout = TIMEOUT;
             basicBinding.OpenTimeout = TIMEOUT;
-            client = new ServicePortTypeClient(basicBinding, new EndpointAddress("http://192.168.1.40:8080/MainService/services/Service?wsdl"));
+            client = new ServicePortTypeClient(basicBinding, new EndpointAddress("http://localhost:8080/MainService/services/Service?wsdl"));
             if (client.Authenticate(UserName.Text, Password.Text))
             {
                 return true;
             }
             return false;
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+            Password.UseSystemPasswordChar = true;
         }
     }
 }

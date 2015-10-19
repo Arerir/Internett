@@ -103,13 +103,13 @@ namespace InternettClient.ServiceReference1 {
     public partial class ReturnQRPictureResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://main", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return")]
-        public sbyte[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)]
+        public byte[] @return;
         
         public ReturnQRPictureResponse() {
         }
         
-        public ReturnQRPictureResponse(sbyte[] @return) {
+        public ReturnQRPictureResponse(byte[] @return) {
             this.@return = @return;
         }
     }
@@ -209,7 +209,7 @@ namespace InternettClient.ServiceReference1 {
             return base.Channel.ReturnQRPicture(request);
         }
         
-        public sbyte[] ReturnQRPicture(string Username) {
+        public byte[] ReturnQRPicture(string Username) {
             InternettClient.ServiceReference1.ReturnQRPictureRequest inValue = new InternettClient.ServiceReference1.ReturnQRPictureRequest();
             inValue.Username = Username;
             InternettClient.ServiceReference1.ReturnQRPictureResponse retVal = ((InternettClient.ServiceReference1.ServicePortType)(this)).ReturnQRPicture(inValue);
