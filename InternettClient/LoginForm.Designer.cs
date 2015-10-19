@@ -63,6 +63,7 @@
             this.Password.Size = new System.Drawing.Size(238, 20);
             this.Password.TabIndex = 1;
             this.Password.Text = "Password";
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // responseTxt
             // 
@@ -95,8 +96,8 @@
 
         private System.Windows.Forms.TextBox UserName;
         private System.Windows.Forms.Button LoginBTN;
-        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.TextBox responseTxt;
+        private System.Windows.Forms.TextBox Password;
     }
 }
 

@@ -28,3 +28,15 @@ E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\obj\Debug\InternettClient.MainForm.resources
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\Newtonsoft.Json.dll
 E:\Users\Daniel\Source\Repos\Internett\InternettClient\bin\Debug\Newtonsoft.Json.xml
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\bin\Debug\InternettClient.exe.config
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.exe
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.pdb
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\bin\Debug\InternettClient.exe
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\bin\Debug\InternettClient.pdb
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\bin\Debug\Newtonsoft.Json.dll
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\bin\Debug\Newtonsoft.Json.xml
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.csprojResolveAssemblyReference.cache
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.LoginForm.resources
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.MainForm.resources
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.Properties.Resources.resources
+E:\Users\Eli\Source\Repos\Internett2\InternettClient\obj\Debug\InternettClient.csproj.GenerateResource.Cache

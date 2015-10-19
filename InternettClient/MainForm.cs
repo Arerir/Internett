@@ -32,18 +32,14 @@ namespace InternettClient
 
         private void getQRPictureBTN_Click(object sender, EventArgs e)
         {
-            sbyte[] sdata = client.ReturnQRPicture(Username);
-            byte[] data = new byte[sdata.Length];
-            for(int i=0; i < sdata.Length; i++)
-            {
-                data[i] = Convert.ToByte(sdata[i]);
-            }
-            MemoryStream mStream = new MemoryStream();
-            mStream.Write(data, 0, data.Length);
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
-            qrPicture.Image = bm;
+            byte[] data = client.ReturnQRPicture(Username);
+
+            MemoryStream ms = new MemoryStream(data);
+
+            qrPicture.Image = Image.FromStream(ms);
             qrPicture.Visible = true;
+
+            ms.Dispose();
            
         }
 
@@ -84,6 +80,7 @@ namespace InternettClient
 
             /*
             **Utfører en bytecount på brukerens valgte måte ved å convertere byte array om til base64 string
+            **Bruker med vilje forskjellige metoder for å convertere til byte array
             */
             if (qrCheckBox.Checked)
             {
@@ -92,7 +89,7 @@ namespace InternettClient
 
                 using(MemoryStream ms = new MemoryStream())
                 {
-                    picture.Save(ms, ImageFormat.Bmp);
+                    picture.Save(ms, ImageFormat.Png);
                     byte[] imageBytes = ms.ToArray();
                     base64Data = Convert.ToBase64String(imageBytes);
                 }
@@ -117,7 +114,15 @@ namespace InternettClient
             else if (String.IsNullOrEmpty(inputTB.Text) == false)
             {
                 chosenItem = true;
-                base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
+                float tmp = 0;
+                if (float.TryParse(inputTB.Text, out tmp))
+                {
+                    base64Data = Convert.ToBase64String(BitConverter.GetBytes(tmp));
+                }
+                else
+                {
+                    base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
+                }
             }
             else
             {
