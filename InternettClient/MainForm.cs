@@ -84,6 +84,7 @@ namespace InternettClient
 
             /*
             **Utfører en bytecount på brukerens valgte måte ved å convertere byte array om til base64 string
+            **Bruker med vilje forskjellige metoder for å convertere til byte array
             */
             if (qrCheckBox.Checked)
             {
@@ -117,7 +118,15 @@ namespace InternettClient
             else if (String.IsNullOrEmpty(inputTB.Text) == false)
             {
                 chosenItem = true;
-                base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
+                float tmp = 0;
+                if (float.TryParse(inputTB.Text, out tmp))
+                {
+                    base64Data = Convert.ToBase64String(BitConverter.GetBytes(tmp));
+                }
+                else
+                {
+                    base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
+                }
             }
             else
             {
