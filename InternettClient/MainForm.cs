@@ -34,13 +34,15 @@ namespace InternettClient
         {
             byte[] data = client.ReturnQRPicture(Username);
 
-            MemoryStream ms = new MemoryStream(data);
+            string tmp = System.Text.Encoding.Default.GetString(data);
+            byte[] tmp2 = Convert.FromBase64String(tmp);
+            string tmp3 = System.Text.Encoding.Default.GetString(tmp2);
 
-            qrPicture.Image = Image.FromStream(ms);
-            qrPicture.Visible = true;
+            ImageConverter converter = new ImageConverter();
+            Image tmp4 = converter.ConvertFrom(tmp2) as Image;
 
-            ms.Dispose();
-           
+            qrPicture.Image = tmp4;
+            qrPicture.Visible = true;           
         }
 
         private void UploadButton_Click(object sender, EventArgs e)
@@ -107,11 +109,6 @@ namespace InternettClient
                     byte[] byteData = new byte[fileData.Length];
 
                     System.Buffer.BlockCopy(fileData.ToCharArray(), 0, byteData, 0, byteData.Length);
-
-MemoryStream ms = new MemoryStream(byteData);
-                    Image image = Image.FromStream(ms);
-                    qrPicture.Image = image;
-                    qrPicture.Visible = true;
 
                     base64Data = Convert.ToBase64String(byteData);
                 }

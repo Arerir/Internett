@@ -32,7 +32,7 @@
             this.byteTB = new System.Windows.Forms.TextBox();
             this.qrPicture = new System.Windows.Forms.PictureBox();
             this.getQRPictureBTN = new System.Windows.Forms.Button();
-            this.UploadButton = new System.Windows.Forms.Button();
+            this.FileButton = new System.Windows.Forms.Button();
             this.ByteLabel = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.uploadedFileText = new System.Windows.Forms.TextBox();
@@ -83,15 +83,15 @@
             this.getQRPictureBTN.UseVisualStyleBackColor = true;
             this.getQRPictureBTN.Click += new System.EventHandler(this.getQRPictureBTN_Click);
             // 
-            // UploadButton
+            // FileButton
             // 
-            this.UploadButton.Location = new System.Drawing.Point(11, 174);
-            this.UploadButton.Name = "UploadButton";
-            this.UploadButton.Size = new System.Drawing.Size(75, 23);
-            this.UploadButton.TabIndex = 4;
-            this.UploadButton.Text = "Upload File";
-            this.UploadButton.UseVisualStyleBackColor = true;
-            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
+            this.FileButton.Location = new System.Drawing.Point(11, 174);
+            this.FileButton.Name = "FileButton";
+            this.FileButton.Size = new System.Drawing.Size(75, 23);
+            this.FileButton.TabIndex = 4;
+            this.FileButton.Text = "File";
+            this.FileButton.UseVisualStyleBackColor = true;
+            this.FileButton.Click += new System.EventHandler(this.UploadButton_Click);
             // 
             // ByteLabel
             // 
@@ -180,7 +180,7 @@
             this.Controls.Add(this.qrCheckBox);
             this.Controls.Add(this.uploadedFileText);
             this.Controls.Add(this.ByteLabel);
-            this.Controls.Add(this.UploadButton);
+            this.Controls.Add(this.FileButton);
             this.Controls.Add(this.getQRPictureBTN);
             this.Controls.Add(this.qrPicture);
             this.Controls.Add(this.byteTB);
@@ -199,7 +199,7 @@
         private System.Windows.Forms.TextBox byteTB;
         private System.Windows.Forms.PictureBox qrPicture;
         private System.Windows.Forms.Button getQRPictureBTN;
-        private System.Windows.Forms.Button UploadButton;
+        private System.Windows.Forms.Button FileButton;
         private System.Windows.Forms.Label ByteLabel;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox uploadedFileText;

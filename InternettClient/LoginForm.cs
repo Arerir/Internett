@@ -46,7 +46,7 @@ namespace InternettClient
             BasicHttpBinding basicBinding = new BasicHttpBinding();
             basicBinding.SendTimeout = TIMEOUT;
             basicBinding.OpenTimeout = TIMEOUT;
-            client = new ServicePortTypeClient(basicBinding, new EndpointAddress("http://192.168.1.40:8080/MainService/services/Service?wsdl"));
+            client = new ServicePortTypeClient(basicBinding, new EndpointAddress("http://localhost:8080/MainService/services/Service?wsdl"));
             if (client.Authenticate(UserName.Text, Password.Text))
             {
                 return true;
