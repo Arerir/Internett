@@ -87,7 +87,7 @@ namespace InternettClient
                 Image picture = qrPicture.Image;
                 chosenItem = true;
 
-                using(MemoryStream ms = new MemoryStream())
+                using (MemoryStream ms = new MemoryStream())
                 {
                     picture.Save(ms, ImageFormat.Png);
                     byte[] imageBytes = ms.ToArray();
@@ -106,23 +106,15 @@ namespace InternettClient
                     s.Dispose();
                     byte[] byteData = new byte[fileData.Length];
                     System.Buffer.BlockCopy(fileData.ToCharArray(), 0, byteData, 0, byteData.Length);
-                    
-                    base64Data = Convert.ToBase64String(byteData);                    
+
+                    base64Data = Convert.ToBase64String(byteData);
                 }
                 catch { }
             }
             else if (String.IsNullOrEmpty(inputTB.Text) == false)
             {
                 chosenItem = true;
-                float tmp = 0;
-                if (float.TryParse(inputTB.Text, out tmp))
-                {
-                    base64Data = Convert.ToBase64String(BitConverter.GetBytes(tmp));
-                }
-                else
-                {
-                    base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
-                }
+                base64Data = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(inputTB.Text));
             }
             else
             {
