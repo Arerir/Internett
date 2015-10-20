@@ -105,7 +105,13 @@ namespace InternettClient
                     sr.Dispose();
                     s.Dispose();
                     byte[] byteData = new byte[fileData.Length];
+
                     System.Buffer.BlockCopy(fileData.ToCharArray(), 0, byteData, 0, byteData.Length);
+
+MemoryStream ms = new MemoryStream(byteData);
+                    Image image = Image.FromStream(ms);
+                    qrPicture.Image = image;
+                    qrPicture.Visible = true;
 
                     base64Data = Convert.ToBase64String(byteData);
                 }
