@@ -110,7 +110,7 @@
     <None Include="Service References\ServiceReference1\InternettClient.ServiceReference1.ReturnQRPictureResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\Service1.wsdl" />
+    <None Include="Service References\ServiceReference1\Service.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

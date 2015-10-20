@@ -5,18 +5,17 @@
 	</wsdl:documentation>
   <wsdl:types>
     <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://main">
-      <xs:element name="Authenticate">
+      <xs:element name="ByteCounter">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
-            <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="base64String" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AuthenticateResponse">
+      <xs:element name="ByteCounterResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="return" type="xs:boolean" />
+            <xs:element name="return" type="xs:int" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -34,17 +33,18 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ByteCounter">
+      <xs:element name="Authenticate">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="base64String" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="ByteCounterResponse">
+      <xs:element name="AuthenticateResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="return" type="xs:int" />
+            <xs:element name="return" type="xs:boolean" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -174,13 +174,13 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceHttpSoap11Endpoint" binding="ns:ServiceSoap11Binding">
-      <soap:address location="http://localhost:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" />
+      <soap:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpSoap12Endpoint" binding="ns:ServiceSoap12Binding">
-      <soap12:address location="http://localhost:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" />
+      <soap12:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpEndpoint" binding="ns:ServiceHttpBinding">
-      <http:address location="http://localhost:8080/MainService/services/Service.ServiceHttpEndpoint/" />
+      <http:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpEndpoint/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
