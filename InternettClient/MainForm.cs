@@ -80,10 +80,9 @@ namespace InternettClient
             bool chosenItem = false;
 
 
-            /*
-            **Utfører en bytecount på brukerens valgte måte ved å convertere byte array om til base64 string
-            **Bruker med vilje forskjellige metoder for å convertere til byte array
-            */
+            
+            //Utfører en bytecount på brukerens valgte måte ved å convertere byte array om til base64 string
+            //Bruker med vilje forskjellige metoder for å convertere til byte array
             if (qrCheckBox.Checked)
             {
                 Image picture = qrPicture.Image;
