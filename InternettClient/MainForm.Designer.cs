@@ -91,7 +91,7 @@
             this.FileButton.TabIndex = 4;
             this.FileButton.Text = "File";
             this.FileButton.UseVisualStyleBackColor = true;
-            this.FileButton.Click += new System.EventHandler(this.UploadButton_Click);
+            this.FileButton.Click += new System.EventHandler(this.FileButton_Click);
             // 
             // ByteLabel
             // 
@@ -117,7 +117,6 @@
             this.uploadedFileText.Size = new System.Drawing.Size(250, 13);
             this.uploadedFileText.TabIndex = 6;
             this.uploadedFileText.Visible = false;
-            this.uploadedFileText.TextChanged += new System.EventHandler(this.uploadedFileText_TextChanged);
             // 
             // qrCheckBox
             // 
