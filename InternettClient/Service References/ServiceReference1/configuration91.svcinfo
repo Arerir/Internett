@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4/G+TGqIkmn+/TsGwUKjojkK9Mc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3cmjdo48Gr8plaQI85CnFqKscCk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceSoap11Binding">
       <properties>
@@ -263,10 +263,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceHttpSoap11Endpoint" contract="ServiceReference1.ServicePortType" bindingType="basicHttpBinding" address="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" bindingConfiguration="ServiceSoap11Binding">
+    <endpoint name="ServiceHttpSoap11Endpoint" contract="ServiceReference1.ServicePortType" bindingType="basicHttpBinding" address="http://localhost:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" bindingConfiguration="ServiceSoap11Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/</serializedValue>
+          <serializedValue>http://localhost:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -348,10 +348,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="ServiceHttpSoap12Endpoint" contract="ServiceReference1.ServicePortType" bindingType="customBinding" address="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" bindingConfiguration="ServiceSoap12Binding">
+    <endpoint name="ServiceHttpSoap12Endpoint" contract="ServiceReference1.ServicePortType" bindingType="customBinding" address="http://localhost:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" bindingConfiguration="ServiceSoap12Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/</serializedValue>
+          <serializedValue>http://localhost:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

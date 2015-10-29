@@ -174,13 +174,13 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceHttpSoap11Endpoint" binding="ns:ServiceSoap11Binding">
-      <soap:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" />
+      <soap:address location="http://localhost:8080/MainService/services/Service.ServiceHttpSoap11Endpoint/" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpSoap12Endpoint" binding="ns:ServiceSoap12Binding">
-      <soap12:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" />
+      <soap12:address location="http://localhost:8080/MainService/services/Service.ServiceHttpSoap12Endpoint/" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpEndpoint" binding="ns:ServiceHttpBinding">
-      <http:address location="http://192.168.1.40:8080/MainService/services/Service.ServiceHttpEndpoint/" />
+      <http:address location="http://localhost:8080/MainService/services/Service.ServiceHttpEndpoint/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
